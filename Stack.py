@@ -30,7 +30,7 @@ class Stack:
   
   # Elimina el último nodo
   def pop(self) -> Node:
-    # Verificar si hay elementos
+    # Verificar si hay nodos
     if self.is_empty():
       raise Exception("No hay elementos en el Stack")
 
@@ -42,13 +42,22 @@ class Stack:
       last = current
       current = current.next
 
-    # Eliminar último elemento
+    # Eliminar último nodo
     if last.next == None:
       self.head = None
     else:
       last.next = None
 
     return current
+  
+  # Obtiene el último nodo sin eliminarlo
+  def last(self) -> Node:
+    last_node = self.head
+
+    while last_node.next != None:
+      last_node = last_node.next
+    
+    return last_node
   
   # Verifica si el stack está vacío
   def is_empty(self) -> bool:
