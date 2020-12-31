@@ -1,7 +1,6 @@
 # Importar dependencias
 from Stack import Stack
-from characters import OPERATORS
-from helper import get_operator_weight
+from operators import OPERATORS, get_operator_weight
 
 # Traduce una expresión de infijo a prefijo
 def infix_to_prefix(infix_expression: str):
