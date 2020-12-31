@@ -13,8 +13,8 @@ from helper import is_number
 def identify_variables(prefix_expression:str) -> [str]:
   variables = []
 
-  for char in prefix_expression:
-    if char not in OPERATORS and char not in '() ' and not is_number(char):
+  for char in prefix_expression.split():
+    if not (char in OPERATORS or char in '() ' or is_number(char) or char in variables):
       variables.append(char)
   
   return variables
