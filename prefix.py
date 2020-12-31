@@ -25,7 +25,6 @@ def infix_to_prefix(infix_expression: str):
 
   # Separar la expresión
   characters = reversed_expression + [')']
-  print(characters)
 
   # Iterar por los caracteres
   for character in characters:

@@ -4,6 +4,7 @@
 
 # Importar dependencias
 from operators import OPERATORS
+from prefix import infix_to_prefix
 
 # Pide un polinomio al usuario y limpia la entrada
 def ask_for_polynomial():
@@ -25,4 +26,5 @@ def ask_for_polynomial():
 # Punto de entrada al programa
 if __name__ == "__main__":
   polynomial = ask_for_polynomial()
-  print(polynomial)
+  prefix_expression = infix_to_prefix(polynomial)
+  print(prefix_expression)
