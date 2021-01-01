@@ -5,7 +5,7 @@
 # Importar dependencias
 from operators import OPERATORS
 from prefix import infix_to_prefix
-from evaluator import identify_variables, ask_for_variables
+from evaluator import identify_variables, ask_for_variables, evaluate_prefix_expression
 
 # Pide un polinomio al usuario y limpia la entrada
 def ask_for_polynomial():
@@ -32,4 +32,9 @@ if __name__ == "__main__":
 
   # Identificar las incógnitas y pedírselas al usuario
   variables = ask_for_variables(identify_variables(prefix_expression))
-  print(variables)
+  
+  # Evaluar la expresión
+  result = evaluate_prefix_expression(prefix_expression, variables)
+
+  # Imprimir resultado
+  print("\nResultado: {}".format(result))
