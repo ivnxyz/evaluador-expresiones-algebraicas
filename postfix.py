@@ -1,6 +1,7 @@
 from Stack import Node, Stack
-from helper import is_number, get_operator_weight
-from characters import OPERATORS
+from helper import is_number
+from operators import OPERATORS, get_operator_weight
+
 def infix_to_postfix(algebraic_expression: str):
   result=''
   stacksito=Stack()
