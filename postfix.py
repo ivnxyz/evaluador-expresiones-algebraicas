@@ -11,7 +11,7 @@ def infix_to_postfix(algebraic_expression: str):
     elif char=='(':
       stacksito.push('(')
     elif char==')':
-      while stacksito.is_empty() and stacksito.last() is not '(':
+      while stacksito.is_empty() and stacksito.last() != '(':
         result+=stacksito.pop()
       stacksito.pop()
     else:

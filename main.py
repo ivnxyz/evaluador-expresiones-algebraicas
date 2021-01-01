@@ -6,6 +6,7 @@
 from operators import OPERATORS
 from prefix import infix_to_prefix
 from evaluator import identify_variables, ask_for_variables, evaluate_prefix_expression
+from postfix import infix_to_postfix
 
 # Pide un polinomio al usuario y limpia la entrada
 def ask_for_polynomial():
@@ -29,6 +30,7 @@ if __name__ == "__main__":
   # Obtener polinomio
   polynomial = ask_for_polynomial()
   prefix_expression = infix_to_prefix(polynomial)
+  post_exp = infix_to_postfix(polynomial)
 
   # Identificar las incógnitas y pedírselas al usuario
   variables = ask_for_variables(identify_variables(prefix_expression))
