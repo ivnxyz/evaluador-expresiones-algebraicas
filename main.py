@@ -22,7 +22,6 @@ def ask_for_polynomial():
       clear_polynomial += ' {} '.format(char)
     else:
       clear_polynomial += char
-
   return clear_polynomial
 
 # Punto de entrada al programa
