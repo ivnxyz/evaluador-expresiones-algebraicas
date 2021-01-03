@@ -49,5 +49,5 @@ def infix_to_prefix(infix_expression: str):
       expression_stack.pop()
     else:
       result_expression_list.append(character)
-
+      
   return ' '.join(result_expression_list)[::-1]
