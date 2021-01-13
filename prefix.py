@@ -36,7 +36,7 @@ def infix_to_prefix(infix_expression: str):
       operator_value = get_operator_weight(character)
 
       # Sacar elementos del Stack
-      while not expression_stack.is_empty() and get_operator_weight(expression_stack.last().data) >= operator_value:
+      while (not expression_stack.is_empty()) and get_operator_weight(expression_stack.last().data) > operator_value:
         result_expression_list.append(expression_stack.pop().data)
       
       # Añadir operador al Stack
