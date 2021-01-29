@@ -5,6 +5,7 @@
 # Importar dependencias
 from operators import OPERATORS
 from prefix import infix_to_prefix
+from postfix import infix_to_postfix
 from evaluator import identify_variables, ask_for_variables, evaluate_prefix_expression
 
 # Pide un polinomio al usuario y limpia la entrada
@@ -14,6 +15,9 @@ def ask_for_polynomial():
   # Eliminar espacios innecesarios
   polynomial = polynomial.replace(' ', '')
   clear_polynomial = ''
+
+  if polynomial[0] == '+' or polynomial[0] == '-':
+    polynomial = '0' + polynomial
 
   # Insertar espacios al rededor de los operadores y paréntesis
   for char in polynomial:
@@ -28,9 +32,15 @@ def ask_for_polynomial():
 if __name__ == "__main__":
   # Obtener polinomio
   polynomial = ask_for_polynomial()
-  prefix_expression = infix_to_prefix(polynomial)
 
-  print(prefix_expression)
+  # Traducir a prefijo y posfijo
+  prefix_expression = infix_to_prefix(polynomial)
+  postfix_expression = infix_to_postfix(polynomial)
+
+  print("\n**** TRADUCCIÓN ****")
+  print("Prefijo: ", prefix_expression)
+  print("Posfijo: ", postfix_expression)
+  print("********************\n")
 
   # Identificar las incógnitas y pedírselas al usuario
   variables = ask_for_variables(identify_variables(prefix_expression))
